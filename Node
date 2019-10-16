@@ -1,0 +1,31 @@
+public class Node
+{
+
+
+    Node next;
+    Node previous;
+
+    public Node(){
+
+
+    } // ends node
+
+    public void setNext(Node inNext)
+    {
+        next = inNext;
+
+    }
+    public void setPrevious(Node inPrevious)
+    {
+        previous = inPrevious;
+    }
+
+    public Node getNext() {
+        return next;
+    }
+
+    public Node getPrevious() {
+        return previous;
+    }
+}// ends list
+
