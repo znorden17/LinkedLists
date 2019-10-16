@@ -1,0 +1,9 @@
+public class List {
+    private Node runners;
+
+    public List()
+    {
+        runners = new Node(); // head of list
+    }
+    public addRunners()
+}
