@@ -1,0 +1,45 @@
+/* this entire thing lets me read file.
+
+FILE MUST BE IN PROJECT FOLDER IN OLDER FOR THIS TO WORK
+*/
+import java.util.Scanner;
+import java.io.*;
+import java.util.Arrays;
+
+
+public class FileRead {
+        Scanner fileName = new Scanner(System.in);
+        Scanner answer;
+        
+
+
+public FileRead(){
+System.out.println("Enter the name of the file: ");
+String filePath = fileName.nextLine();
+try{
+answer = new Scanner(new File(filePath));
+        }
+catch(IOException e){
+System.out.println("This doesn't exist");
+        }
+int amtPple;
+int selectK;
+int selectM;
+
+String line = answer.nextLine();
+do{
+    String[] splitLine = line.split(" ");
+    Arrays.toString(splitLine);
+    
+    amtPple = Integer.parseInt(splitLine[0]); // amt people
+    selectK = Integer.parseInt(splitLine[1]); // selector k
+    selectM = Integer.parseInt(splitLine[2]); // selector m
+    
+    
+    List stupidPeople = new List();
+    
+    line = answer.nextLine();
+}
+while(line.charAt(0)!= 48);
+}
+}
