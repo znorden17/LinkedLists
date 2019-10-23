@@ -1,9 +1,96 @@
 public class List {
-    private Node runners;
-
-    public List()
+    protected Node first;
+    protected Node last;
+    private int size;
+    
+    public boolean empty(){
+        return first == null;
+        
+    } 
+    
+public void add (int data)
     {
-        runners = new Node(); // head of list
+        Node node = new Node(data, null, null);
+        if(first == null){
+            first = node;
+            node.setNext(node);
+            node.setPrevious(node);
+            last = first;
+        }
+        else if (first != null){
+            node.setPrevious(last);
+            last.setNext(node);
+            first.setPrevious(node);
+            node.setNext(first);
+            last = node;
     }
-    public addRunners()
+        size++;
+    }
+
+public int delete(Node node)
+{
+int location = 1;
+if(node.getData() == first.getData()){
+    return location;
 }
+Node runner = first.getNext(); // while not equal to first one
+while(runner !=first){
+    location++; //increase location
+    if(runner.getData()==node.getData()){
+        return location;
+    }
+    runner = runner.getNext();
+}
+return -1; // gets you into position to delete the thing
+
+}
+
+/* connects heavily to delete */
+public void removeRunner(int location){
+    if (location == 1) // first node
+    {
+    if (size ==1){
+    first = null;
+    last = null;
+    size = 0;
+    return;
+    }
+    
+    /* makes sure everything stays linked*/
+    first = first.getNext(); // set first to next node
+    first.setPrevious(last); // set next node to the last node
+    last.setNext(first); // sets last to first
+    size--;
+    return;
+    }
+    
+     Node runner = first.getNext();
+        for (int i = 2; i <= size; i++) {
+            if (i == location) {
+                Node p = runner.getPrevious();
+                Node n = runner.getNext();
+                p.setNext(n);
+                n.setPrevious(p);
+                size--;
+                return;
+            }
+            runner = runner.getNext();
+        }
+            
+    }
+    public void print(int location) {
+        Node ptr = first;
+        if(location == 1){
+            System.out.print(first.getData() +" ");
+        }
+        int num = 2;
+        while (ptr.getNext() != first) {
+            ptr = ptr.getNext();
+            if(num == location){
+                System.out.print(ptr.getData() + " ");
+            }
+            num++;
+        }
+        }   
+}
+
