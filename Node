@@ -1,31 +1,46 @@
+/* basically just c+p from the inlab
+
+*/
+
 public class Node
 {
-
-
-    Node next;
-    Node previous;
-
-    public Node(){
-
-
-    } // ends node
-
-    public void setNext(Node inNext)
+    private int data;
+    private Node next;
+    private Node previous;
+    
+    public Node (int data, Node next, Node previous)
     {
-        next = inNext;
-
+        this.data = data;
+        this.next = next;
+        this.previous = previous;
     }
-    public void setPrevious(Node inPrevious)
+    
+    public void setNext(Node what)
     {
-        previous = inPrevious;
+        this.next = what;
     }
-
-    public Node getNext() {
+    
+    public void setPrevious(Node what)
+    {
+        this.previous = what;
+    }
+    
+    public int getData()
+    {
+        return data;
+    }
+    
+    public Node  getNext()
+    {
         return next;
     }
-
-    public Node getPrevious() {
+    
+    public Node getPrevious()
+    {
         return previous;
     }
-}// ends list
+    
+  
+
+}
 
